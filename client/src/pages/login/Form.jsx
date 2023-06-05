@@ -83,7 +83,6 @@ const Form = () => {
         );
         const loggedUser = await loggedUserResponse.json();
         onSubmitProps.resetForm();
-        console.log(loggedUser)
 
         if(loggedUser){
             dispatch(
@@ -97,7 +96,6 @@ const Form = () => {
     }
 
     const handleFormSubmit = async (values,onSubmitProps) => {
-        console.log("inside")
         if(isLogin) await login(values,onSubmitProps);
         if(isRegister) await register(values,onSubmitProps);
     };
@@ -121,7 +119,7 @@ const Form = () => {
                 <Box
                     display="grid"
                     gap="30px"
-                    gridTemplateColums="repeat(4,minmax(0,1fr))"
+                    gridTemplateColumns="repeat(4,minmax(0,1fr))"
                     sx={{
                         "& > div" : {
                             gridColumn : isNonMobile?undefined:"span 4"

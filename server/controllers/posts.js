@@ -13,7 +13,7 @@ export const createPost = async (req,res) => {
             lastName:user.lastName,
             location:user.location,
             description,
-            userPicturePath:userPicturePath,
+            userPicturePath:user.picturePath,
             picturePath,
             likes:{},
             comments:[]
@@ -31,8 +31,7 @@ export const createPost = async (req,res) => {
 
 export const getFeedPosts = async (req,res) => {
     try{
-        const { userId } = req.params;
-        const post = await Post.find({userId});
+        const post = await Post.find();
         res.status(200).json(post);
     }
     catch(err){
