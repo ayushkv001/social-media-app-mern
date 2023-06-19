@@ -1,5 +1,6 @@
 import { Box, useMediaQuery } from "@mui/material";
 import Navbar from "components/navbar";
+import FriendListWidget from "components/widgets/FriendListWidget";
 import MyPostWidget from "components/widgets/MyPostWidget";
 import PostsWidget from "components/widgets/PostsWidget";
 import UserWidget from "components/widgets/UserWidget";
@@ -33,7 +34,9 @@ const Home = () => {
             </Box>
 
             {isNonMobileScreens && (
-                <Box flexBasis="26%"></Box>
+                <Box flexBasis="26%">
+                    <FriendListWidget userId={_id} />
+                </Box>
             )}
         </Box>
     </Box>
