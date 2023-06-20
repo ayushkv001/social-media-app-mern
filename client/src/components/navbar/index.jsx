@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLogout, setMode } from "state";
+import logo from "../../assets/logo.png";
 
 
 const Navbar = () => {
@@ -25,6 +26,7 @@ const Navbar = () => {
 
     return <FlexBetween padding="1rem 6%" backgroundColor={alt}>
         <FlexBetween gap="1.75rem">
+            <img src={logo} alt="logo" width={65} height={65} style={{borderRadius:10}}/>
             <Typography 
                 fontWeight="bold" 
                 fontSize="clamp(1rem, 2rem, 2.25rem)" 
