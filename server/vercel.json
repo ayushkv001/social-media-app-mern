@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name":"social-media-app-server",
+    "name":"server-20-08-2023",
     "builds":[
         {
             "src":".js",
