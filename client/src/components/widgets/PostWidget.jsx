@@ -6,6 +6,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "./../../state";
+import { SERVER } from "env";
   
 const PostWidget = ({ postId, postUserId, name, description, location, picturePath, userPicturePath, likes, comments}) => { 
     const [isComments, setIsComments] = useState(false);
@@ -22,7 +23,7 @@ const PostWidget = ({ postId, postUserId, name, description, location, picturePa
     const primary = palette.primary.main;
   
     const patchLike = async () => {
-      const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+      const response = await fetch(`${SERVER}/posts/${postId}/like`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -51,7 +52,7 @@ const PostWidget = ({ postId, postUserId, name, description, location, picturePa
             height="auto"
             alt="post"
             style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-            src={`http://localhost:3001/assets/${picturePath}`}
+            src={`${SERVER}/assets/${picturePath}`}
           />
         )}
         <FlexBetween mt="0.25rem">

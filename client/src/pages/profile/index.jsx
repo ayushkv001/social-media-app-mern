@@ -4,6 +4,7 @@ import FriendListWidget from "components/widgets/FriendListWidget";
 import MyPostWidget from "components/widgets/MyPostWidget";
 import PostsWidget from "components/widgets/PostsWidget";
 import UserWidget from "components/widgets/UserWidget";
+import { SERVER } from "env";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -15,7 +16,7 @@ const ProfilePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/${userId}`, {
+    const response = await fetch(`${SERVER}/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

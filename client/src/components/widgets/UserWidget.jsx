@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import twitter from "./../../assets/twitter.png";
 import linkedIn from "./../../assets/linkedin.png";
+import { SERVER } from "env";
 
 
 const UserWidget = ({userId,picturePath}) => {
@@ -20,7 +21,7 @@ const UserWidget = ({userId,picturePath}) => {
     const main = palette.neutral.main;
 
     const getUser = async () => {
-        const response = await fetch(`http://localhost:3001/users/${userId}`,
+        const response = await fetch(`${SERVER}/users/${userId}`,
             {
                 method:"GET",
                 headers:{Authorization : `Bearer ${token}`},

@@ -1,6 +1,7 @@
 import { EditOutlined } from "@mui/icons-material";
 import { Box, Button, TextField, Typography, useMediaQuery, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
+import { SERVER } from "env";
 import { Formik } from "formik";
 import { useState } from "react";
 import Dropzone from "react-dropzone";
@@ -54,10 +55,13 @@ const Form = () => {
         for(let value in values){
             formData.append(value,values[value])
         }
-        formData.append('picturePath', values.picture.name)
+        formData.append('picturePath', "default.jpg")//values.picture?values.picture.name:"default.jpg")
+
+        //photo upload resolve in GITHUB remaining
+        formData.set('picture',null)
 
         const savedUserResponse = await fetch(
-            "http://localhost:3001/auth/register",
+            `${SERVER}/auth/register`,
             {
                 method:"POST",
                 body:formData,
@@ -74,7 +78,7 @@ const Form = () => {
     const login =  async (values,onSubmitProps) => {
 
         const loggedUserResponse = await fetch(
-            "http://localhost:3001/auth/login",
+            `${SERVER}/auth/login`,
             {
                 method:"POST",
                 headers:{"Content-Type":"application/json"},

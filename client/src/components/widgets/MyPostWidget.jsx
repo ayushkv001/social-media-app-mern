@@ -7,6 +7,7 @@ import { EditOutlined, DeleteOutlined, AttachFileOutlined, GifBoxOutlined, Image
   import { useState } from "react";
   import { useDispatch, useSelector } from "react-redux";
   import { setPosts } from "state";
+import { SERVER } from "env";
   
   const MyPostWidget = ({ picturePath }) => {
     const dispatch = useDispatch();
@@ -25,11 +26,16 @@ import { EditOutlined, DeleteOutlined, AttachFileOutlined, GifBoxOutlined, Image
       formData.append("userId", _id);
       formData.append("description", post);
       if (image) {
-        formData.append("picture", image);
-        formData.append("picturePath", image.name);
+        ////photo upload resolve in GITHUB remaining
+        formData.append("picture", null);
+        formData.append("picturePath", "default2.jpg");
+
+
+        // formData.append("picture", image);
+        // formData.append("picturePath", image.name);
       }
   
-      const response = await fetch(`http://localhost:3001/posts`, {
+      const response = await fetch(`${SERVER}/posts`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
