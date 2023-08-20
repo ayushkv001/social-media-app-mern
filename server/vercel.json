@@ -3,7 +3,7 @@
     "name":"server-20-08-2023",
     "builds":[
         {
-            "src":".js",
+            "src":"./index.js",
             "use":"@vercel/node"
         }
     ],
