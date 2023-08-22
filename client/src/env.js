@@ -1,1 +1,1 @@
-export const SERVER = process.env.REACT_APP_SERVER_CON
+export const SERVER = "https://social-media-app-mern-eta.vercel.app"
