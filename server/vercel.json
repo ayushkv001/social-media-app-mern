@@ -3,14 +3,14 @@
     "name":"server-20-08-2023",
     "builds":[
         {
-            "src":"./index.js",
+            "src":"index.js",
             "use":"@vercel/node"
         }
     ],
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"/"
+            "dest":"index.js"
         }
     ]
 }
