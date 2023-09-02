@@ -275,6 +275,7 @@ const Form = () => {
                                 color:palette.primary.light
                             }
                         }}
+                        textAlign="center"
                     >
                         {isLogin
                             ? "Don't have an account? Sign Up Here."

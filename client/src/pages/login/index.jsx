@@ -18,14 +18,14 @@ const Login = () => {
             </Typography>
         </Box>
         <Box 
-            width={isNonMobileScreens?"50%":"93&"}
+            width={isNonMobileScreens?"40%":"93&"}
             p="2rem"
             m="2rem auto"
             borderRadius="1.5rem"
             backgroundColor={theme.palette.background.alt}
         >
-            <Typography fontWeight="500" variant="h5" sx={{mb:"1.5rem"}}>
-                Welcom to Connected!!!
+            <Typography fontWeight="500" textAlign="center" variant="h5" sx={{mb:"1.5rem"}}>
+                <i>Welcom to</i> Connected!!!
             </Typography>
             <Form/>
         </Box>
