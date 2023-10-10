@@ -25,7 +25,7 @@ const Login = () => {
             backgroundColor={theme.palette.background.alt}
         >
             <Typography fontWeight="500" textAlign="center" variant="h5" sx={{mb:"1.5rem"}}>
-                <i>Welcom to</i> Connected!!!
+                <i>Welcome to</i> Connected!!!
             </Typography>
             <Form/>
         </Box>
